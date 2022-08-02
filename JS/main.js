@@ -12,6 +12,7 @@ const keys = [
     ["0", "="],
     ["'", "?"],
     ["¡", "¿"],
+    ["DEL", "DEL"],
   ], //primera fila del teclado
   [
     ["q", "Q"],
@@ -117,6 +118,8 @@ function renderKeyboard() {
         } else if (key.textContent === "MAYUS") {
           mayus = !mayus;
           renderKeyboard();
+        } else if (key.textContent === "DEL") {
+          current.value = current.value.slice(0, -1);
         } else if (key.textContent === "") {
           current.value += " ";
         } else {
